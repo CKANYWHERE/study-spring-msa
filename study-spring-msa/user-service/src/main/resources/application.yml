@@ -1,0 +1,23 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://192.168.9.48:3306/pi?characterEncoding=utf8
+    username: golfzon_iut
+    password: golfzon_iut
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    server-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+greeting:
+  message: Welcome to Simple E-commerce

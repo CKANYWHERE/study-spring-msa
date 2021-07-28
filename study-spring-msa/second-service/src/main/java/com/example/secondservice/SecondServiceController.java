@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class SecondServiceController {
     @GetMapping("/welcome")
-    public String welcome(){
+    public String welcome() {
         return "hello second service";
     }
 

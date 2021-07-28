@@ -32,7 +32,7 @@ public class CustomFilter extends AbstractGatewayFilterFactory<CustomFilter.Conf
 
     }
 
-    public static class Config{
+    public static class Config {
         //put the configuration
     }
 }

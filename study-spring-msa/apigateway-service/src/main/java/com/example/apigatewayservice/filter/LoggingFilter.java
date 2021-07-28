@@ -44,12 +44,12 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
 
             log.info("Logging filter baseMessage:>{}", config.getBaseMessage());
 
-            if(config.isPreLogger()){
+            if (config.isPreLogger()) {
                 log.info("Logging filter Start Req Id ->{}", request.getId());
             }
             //Post filter
             return chain.filter(exchange).then(Mono.fromRunnable(() -> {
-                if(config.isPostLogger()) {
+                if (config.isPostLogger()) {
                     log.info("Logging Post filter: response code => {}", response.getStatusCode());
                 }
             }));
@@ -60,7 +60,7 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
     }
 
     @Data
-    public static class Config{
+    public static class Config {
         //put the configuration
         private String baseMessage;
         private boolean preLogger;
