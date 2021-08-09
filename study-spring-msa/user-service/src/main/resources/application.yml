@@ -1,11 +1,11 @@
 server:
-  port: 0
+  port: 8080
 
 spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://192.168.9.48:3306/pi?characterEncoding=utf8
+    url: jdbc:mysql://192.168.9.48:3306/test2?characterEncoding=utf8
     username: golfzon_iut
     password: golfzon_iut
     driver-class-name: com.mysql.cj.jdbc.Driver

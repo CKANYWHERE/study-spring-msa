@@ -17,7 +17,7 @@ public class UserEntity {
     private String email;
     @Column(nullable = false, length = 50, unique = true)
     private String name;
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, name = "ENC_PD")
     private String encPwd;
     @Column(nullable = false, unique = true)
     private String userId;
