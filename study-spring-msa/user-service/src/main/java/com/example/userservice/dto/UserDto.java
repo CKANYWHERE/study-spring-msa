@@ -1,8 +1,11 @@
 package com.example.userservice.dto;
 
+import com.example.userservice.vo.ResponseOrder;
 import lombok.Data;
+import net.bytebuddy.agent.builder.AgentBuilder;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class UserDto {
@@ -12,4 +15,6 @@ public class UserDto {
     private String userId;
     private Date createdAt;
     private String encPwd;
+
+    private List<ResponseOrder> orders;
 }
