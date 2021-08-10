@@ -18,6 +18,12 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
+
+        - id: catalog-service
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/catalog/**
+
         - id: frist-service
           uri: lb://FIRST-SERVICE
           predicates:

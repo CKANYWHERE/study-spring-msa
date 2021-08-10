@@ -1,5 +1,6 @@
+
 server:
-  port: 8080
+  port: 8001
 
 spring:
   application:
@@ -10,6 +11,12 @@ spring:
     password: golfzon_iut
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    generate-ddl: true
+
 eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
@@ -19,5 +26,6 @@ eureka:
     server-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
-greeting:
-  message: Welcome to Simple E-commerce
+logging:
+  level:
+    com.example.catalogservice: DEBUG
