@@ -1,14 +1,21 @@
+
 server:
-  port: 8080
+  port: 8010
 
 spring:
   application:
-    name: user-service
+    name: order-service
   datasource:
     url: jdbc:mysql://partprime.iptime.org:43306/test2?characterEncoding=utf8
     username: golfzon_iut
     password: golfzon_iut
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
 
 eureka:
   instance:
@@ -19,5 +26,6 @@ eureka:
     server-url:
       defaultZone: http://127.0.0.1:8761/eureka
 
-greeting:
-  message: Welcome to Simple E-commerce
+logging:
+  level:
+    com.example.orderservice: DEBUG
