@@ -32,6 +32,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/**").hasIpAddress("192.168.9.122")
         .and()
         .addFilter(getAuthenticFilter());
+
+        http.headers().frameOptions().disable();
     }
 
     private AuthenticationFilter getAuthenticFilter() throws Exception{

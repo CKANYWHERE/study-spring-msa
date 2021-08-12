@@ -73,7 +73,6 @@ public class UserServiceImpl implements UserService {
         User user = new User(userEntity.getEmail(), userEntity.getEncPwd(),
                 true, true, true, true,
                 new ArrayList<>());
-        System.out.println(user);
         return user;
     }
 }

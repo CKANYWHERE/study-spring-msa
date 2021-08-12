@@ -25,7 +25,8 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                     new UsernamePasswordAuthenticationToken(
                             creds.getEmail(),
                             creds.getPassword(),
-                            new ArrayList<>())
+                            new ArrayList<>()
+                    )
             );
 
         } catch (IOException e){
@@ -39,6 +40,5 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                                             HttpServletResponse response,
                                             FilterChain chain,
                                             Authentication authResult) throws IOException, ServletException {
-        super.successfulAuthentication(request, response, chain, authResult);
     }
 }
