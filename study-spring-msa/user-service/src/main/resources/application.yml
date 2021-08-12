@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: catalog-service
+    name: user-service
   datasource:
     url: jdbc:mysql://partprime.iptime.org:43306/test2?characterEncoding=utf8
     username: golfzon_iut

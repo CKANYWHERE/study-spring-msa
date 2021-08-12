@@ -13,7 +13,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     generate-ddl: true
 
@@ -25,7 +25,3 @@ eureka:
     fetch-registry: true
     server-url:
       defaultZone: http://127.0.0.1:8761/eureka
-
-logging:
-  level:
-    com.example.catalogservice: DEBUG

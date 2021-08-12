@@ -35,7 +35,6 @@ public class CatalogController {
         Iterable<CatalogEntity> userList = catalogService.getAllCatalogs();
 
         List<ResponseCatalog> res = new ArrayList<>();
-
         userList.forEach(v ->{
             res.add(new ModelMapper().map(v, ResponseCatalog.class));
         });
