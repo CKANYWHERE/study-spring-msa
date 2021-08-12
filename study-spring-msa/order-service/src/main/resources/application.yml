@@ -1,0 +1,31 @@
+
+server:
+  port: 8010
+
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://partprime.iptime.org:43306/test2?characterEncoding=utf8
+    username: golfzon_iut
+    password: golfzon_iut
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    server-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+logging:
+  level:
+    com.example.orderservice: DEBUG
