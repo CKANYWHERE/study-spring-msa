@@ -1,6 +1,9 @@
 server:
   port: 8000
 
+token:
+  secret: user_token
+
 eureka:
   client:
     register-with-eureka: true
@@ -44,6 +47,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/user/(?<segment>.*), /$\{segment}
+            - AuthorizationFilter
 
         - id: catalog-service
           uri: lb://CATALOG-SERVICE
