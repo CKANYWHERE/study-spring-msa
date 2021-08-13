@@ -49,6 +49,15 @@ spring:
             - RewritePath=/user/(?<segment>.*), /$\{segment}
             - AuthorizationFilter
 
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user/actuator/**
+            - Method=GET,POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user/(?<segment>.*), /$\{segment}
+
         - id: catalog-service
           uri: lb://CATALOG-SERVICE
           predicates:
@@ -75,3 +84,8 @@ spring:
             postLogger: true
 #            - AddRequestHeader=second-request, second-request-header2
 #            - AddResponseHeader=second-response, second-response-header2
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httptrace
