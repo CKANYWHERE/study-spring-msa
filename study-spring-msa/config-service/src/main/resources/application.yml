@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
@@ -12,4 +17,8 @@ spring:
           #uri: git repo
           #username: [username]
           #password: [password]
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh

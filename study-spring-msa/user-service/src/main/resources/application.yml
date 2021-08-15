@@ -1,15 +1,6 @@
 server:
   port: 8080
 
-spring:
-  application:
-    name: user-service
-  datasource:
-    url: jdbc:mysql://partprime.iptime.org:43306/test2?characterEncoding=utf8
-    username: golfzon_iut
-    password: golfzon_iut
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
 eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
@@ -17,7 +8,22 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     server-url:
-      defaultZone: http://127.0.0.1:8761/eureka
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: user-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#  datasource:
+#    url: jdbc:mysql://partprime.iptime.org:43306/test2?characterEncoding=utf8
+#    username: golfzon_iut
+#    password: golfzon_iut
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
 
 greeting:
   message: Welcome to Simple E-commerce
@@ -35,4 +41,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh, health, beans
+        include: refresh, health, beans, busrefresh
